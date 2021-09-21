@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Counter</title>
+    <style>
+        .bgcolor {
+            background-color: #019fbd;
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Learning js</h1>
+    <div style="text-align: center; background-color: #019fbd; padding: 20px 0; margin: 10px;">
+        <p> Counter App</p>
+        <button id="minus">-</button>
+        <h1 id="count">0</h1>
+        <button id="plus">+</button>
+    </div>
+
+    <div style="text-align: center; background-color: #0143bd; padding: 20px 0; margin: 10px;">
+        <p>Time And Date</p>
+        <h1 id="date">dd/mm/yyyy</h1>
+        <h2 id="time">00:00:00</h2>
+    </div>
+
+
+    <div class="bgcolor">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum tenetur numquam eos quae facilis impedit nobis
+            expedita voluptatem deserunt, vel doloremque veniam reprehenderit adipisci dolorem sed corporis iste, animi
+            ullam.</p>
+        <button onclick="colorChange()" type="button">change</button>
+    </div>
+
+
+
+
+
+    <script>
+        let count = document.getElementById('count');
+        let Plus = document.getElementById('plus');
+        let Minus = document.getElementById('minus');
+        let counter = 0;
+
+        Plus.addEventListener('click', () => {
+            counter++;
+            count.innerHTML = counter;
+
+        })
+        Minus.addEventListener('click', () => {
+            counter--;
+            count.innerHTML = counter;
+        })
+        // End of counter
+
+        // start timer
+        let Time = document.getElementById('time');
+        let Dates = document.getElementById('date');
+
+        let NewDate = new Date().toLocaleDateString();
+        let NewTime = new Date().toLocaleTimeString();
+
+        setInterval(() => {
+
+            Time.innerHTML = NewTime;
+        }, 1000)
+        Dates.innerHTML = NewDate;
+
+
+        // console.log(NewDate)
+        // console.log(NewTime)
+
+
+
+        // BG color
+
+        let bgColor = document.querySelector('.bgcolor');
+        // let convertRandomColor= `rgba(${Math.floor(Math.random()*255)})`;
+
+        function colorChange() {
+            bgColor.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
